@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by asia on 03/09/17.
  */
@@ -91,9 +93,15 @@ public class GameOfLife {
         GameOfLife game = new GameOfLife(10, 10);
         game.createingFirstGeneration();
         game.showPlayground();
-        System.out.println("Next generation:");
-        game.newGeneration();
-        game.showPlayground();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Press enter to display next generation:");
+        while(scanner.nextLine().equals("")){
+            System.out.println("Next generation:");
+            game.newGeneration();
+            game.showPlayground();
+        }
+
     }
 
 
